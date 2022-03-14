@@ -1,25 +1,29 @@
+import model.Epic;
+import model.SubTask;
+import model.Task;
+
 import java.util.HashMap;
 
 public class Manager {
 
-    public static int taskId = 100;
+    //public static int taskId = 100;
 
     HashMap<Integer, Task> taskMap = new HashMap<>();
     HashMap<Integer, Epic> epicMap = new HashMap<>();
     HashMap<Integer, SubTask> subTaskMap = new HashMap<>();
 
     String recordNewTask(Task task){
-        taskMap.put(taskId++, task);
+        taskMap.put(Task.decrTaskId(), task);
         return "Task is added";
     }
 
     String recordNewEpic(Epic epic){
-        epicMap.put(taskId++, epic);
+        epicMap.put(Task.decrTaskId(), epic);
         return "Epic is added";
     }
 
     String recordNewSubTask(SubTask subTask) {
-        subTaskMap.put(taskId++, subTask);
+        subTaskMap.put(Task.decrTaskId(), subTask);
         return "SubTask is added";
     }
 
@@ -73,8 +77,8 @@ public class Manager {
         int progressStatus = 0;
         int doneStatus = 0;
         for (SubTask tmp : subTaskMap.values()) {
-            if (tmp.idEpic == object.idEpic) {
-                String str = tmp.taskStatus;
+            if (tmp.getIdEpic() == object.getIdEpic()) {
+                String str = tmp.getTaskStatus();
                 switch (str) {
                     case "NEW":
                         newStatus++;
@@ -94,10 +98,10 @@ public class Manager {
             status = "IN_PROGRESS";
         }
         System.out.println();
-        Epic tmpEpic = epicMap.get(object.idEpic);
-        Epic reNewEpic = new Epic (tmpEpic.epicName, tmpEpic.descriptionEpic);
-        reNewEpic.epicStatus = status;
-        epicMap.put(object.idEpic, reNewEpic);
+        Epic tmpEpic = epicMap.get(object.getIdEpic());
+        Epic reNewEpic = new Epic(tmpEpic.getEpicName(), tmpEpic.getDescriptionEpic());
+        reNewEpic.setEpicStatus(status);
+        epicMap.put(object.getIdEpic(), reNewEpic);
         return "Update subTask is added";
 
     }
@@ -120,7 +124,7 @@ public class Manager {
         HashMap<Integer, String> printSubTask = new HashMap<>();
         int id = 0;
         for (SubTask tmp : subTaskMap.values()) {
-            if (tmp.idEpic == key) {
+            if (tmp.getIdEpic() == key) {
                 printSubTask.put(id++, tmp.toString());
             }
         }

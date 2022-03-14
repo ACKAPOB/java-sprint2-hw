@@ -1,4 +1,5 @@
 public class Task {
+    private static int taskId = 100;
     String taskName;
     String descriptionTask;
     String taskStatus;
@@ -7,6 +8,14 @@ public class Task {
         this.taskName = taskName;
         this.descriptionTask = descriptionTask;
         this.taskStatus = taskStatus;
+    }
+
+    public static int getTaskId() {
+        return taskId;
+    }
+
+    static int decrTaskId () {
+        return taskId++;
     }
 
     @Override
