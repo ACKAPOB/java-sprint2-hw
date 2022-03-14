@@ -4,18 +4,19 @@ import manager.Manager;
 
 import java.util.HashMap;
 
-public class Epic{
+public class Epic extends Task{
 
     private final int epicId;
     private final String epicName;
     private final String descriptionEpic;
     private String epicStatus;
 
-    public Epic(String epicName, String descriptionEpic) {
-        this.epicId = Manager.decrId();
-        this.epicName = epicName;
-        this.descriptionEpic = descriptionEpic;
+    public Epic(String taskName, String descriptionTask) {
+        super(taskName, descriptionTask);
+        this.epicName = taskName;
+        this.descriptionEpic = descriptionTask;
         this.epicStatus = "NEW";
+        this.epicId = Manager.decrId();
     }
 
     public int getEpicId() {

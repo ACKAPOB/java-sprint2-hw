@@ -50,7 +50,7 @@ public class Manager {
         } return printAllRec;
     }
 
-    String delAllRecords() {
+    public String delAllRecords() {
         taskMap.clear();
         epicMap.clear();
         subTaskMap.clear();
@@ -58,7 +58,7 @@ public class Manager {
         return "Map is cleared";
     }
 
-    public Object printRecordsToKey(int key) {
+    public Task printRecordsToKey(int key) {
         if (taskMap.containsKey(key)) {
             return taskMap.get(key);
         } else if (epicMap.containsKey(key)){
@@ -68,12 +68,12 @@ public class Manager {
     }
 
     // Обновление. Новая версия объекта с верным идентификатором передаются в виде параметра.
-    String reNewRecords(int key, Task object) {
+    public String reNewRecords(int key, Task object) {
         taskMap.put(key, object);
         return "Update Task is added";
     }
 
-    String reNewRecords(int key, Epic object) {
+    public String reNewRecords(int key, Epic object) {
         epicMap.put(key, object);
         return "Update Epic is added";
     }
@@ -128,7 +128,7 @@ public class Manager {
     }
 
     //Получение списка всех подзадач определённого эпика.
-    HashMap<Integer, String> printSubTaskToEpic (int key) {
+    public HashMap<Integer, String> printSubTaskToEpic (int key) {
         HashMap<Integer, String> printSubTask = new HashMap<>();
         int id = 0;
         for (SubTask tmp : subTaskMap.values()) {

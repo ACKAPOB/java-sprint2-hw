@@ -3,16 +3,21 @@ package model;
 import manager.Manager;
 
 public class Task {
-    private final int taskId;
+    private int taskId;
     private final String taskName;
     private final String descriptionTask;
-    private final String taskStatus;
+    private String taskStatus;
 
     public Task(String taskName, String descriptionTask, String taskStatus) {
         this.taskId = Manager.decrId();
         this.taskName = taskName;
         this.descriptionTask = descriptionTask;
         this.taskStatus = taskStatus;
+    }
+
+    public Task(String taskName, String descriptionTask) {
+        this.taskName = taskName;
+        this.descriptionTask = descriptionTask;
     }
 
     public int getTaskId() {
