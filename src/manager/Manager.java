@@ -1,3 +1,5 @@
+package manager;
+
 import model.Epic;
 import model.SubTask;
 import model.Task;
@@ -5,30 +7,36 @@ import model.Task;
 import java.util.HashMap;
 
 public class Manager {
+    public static int id = 0;
+    private final HashMap<Integer, Task> taskMap = new HashMap<>();
+    private final HashMap<Integer, Epic> epicMap = new HashMap<>();
+    private final HashMap<Integer, SubTask> subTaskMap = new HashMap<>();
 
-    //public static int taskId = 100;
+    public static int getId() {
+        return id;
+    }
 
-    HashMap<Integer, Task> taskMap = new HashMap<>();
-    HashMap<Integer, Epic> epicMap = new HashMap<>();
-    HashMap<Integer, SubTask> subTaskMap = new HashMap<>();
+    public static int decrId() {
+        return ++id;
+    }
 
-    String recordNewTask(Task task){
-        taskMap.put(Task.decrTaskId(), task);
+    public String recordNewTask(Task task){
+        taskMap.put(task.getTaskId(), task);
         return "Task is added";
     }
 
-    String recordNewEpic(Epic epic){
-        epicMap.put(Task.decrTaskId(), epic);
+    public String recordNewEpic(Epic epic){
+        epicMap.put(epic.getEpicId(), epic);
         return "Epic is added";
     }
 
-    String recordNewSubTask(SubTask subTask) {
-        subTaskMap.put(Task.decrTaskId(), subTask);
+    public String recordNewSubTask(SubTask subTask) {
+        subTaskMap.put(subTask.getSubTaskId(), subTask);
         return "SubTask is added";
     }
 
     //Получение списка всех задач.
-    HashMap<Integer, String> printAllRecords(){
+    public HashMap<Integer, String> printAllRecords(){
         HashMap <Integer, String> printAllRec = new HashMap<>();
         int id = 0;
         for(Task task : taskMap.values()) {
@@ -50,7 +58,7 @@ public class Manager {
         return "Map is cleared";
     }
 
-    Object printRecordsToKey(int key) {
+    public Object printRecordsToKey(int key) {
         if (taskMap.containsKey(key)) {
             return taskMap.get(key);
         } else if (epicMap.containsKey(key)){
@@ -70,7 +78,7 @@ public class Manager {
         return "Update Epic is added";
     }
 
-    String reNewRecordsSubTask(int key, SubTask object) {
+    public String reNewRecordsSubTask(int key, SubTask object) {
         String status = "NEW";
         subTaskMap.put(key, object);
         int newStatus = 0;
@@ -107,7 +115,7 @@ public class Manager {
     }
 
     //Удаление по идентификатору.
-    String delRecordsToKey (int key) {
+    public String delRecordsToKey(int key) {
         if (taskMap.containsKey(key)) {
             taskMap.remove(key);
             return "Task deleted";
