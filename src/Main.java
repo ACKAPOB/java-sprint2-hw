@@ -4,12 +4,12 @@ import model.SubTask;
 import model.Task;
 
 public class Main {
-
+        //  Я сейчас в ветке мэйн
     public static void main(String[] args) {
 
         Manager manager = new Manager();
 
-        Task task1 = new Task("task1", "descTask1", "NEW");
+        //  Task task1 = new Task("task1", "descTask1", "NEW");
         manager.recordNewTask(task1);
 
         Task task2 = new Task("task2", "descTask2", "NEW");

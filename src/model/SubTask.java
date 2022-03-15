@@ -4,7 +4,7 @@ import manager.Manager;
 
 public class SubTask extends Task{
 
-    private final int idEpic;
+   // private final int idEpic;
     private int subTaskId;
 
     public SubTask(int idEpic, String taskName, String descriptionTask, String taskStatus) {

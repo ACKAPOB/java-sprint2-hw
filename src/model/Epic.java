@@ -2,11 +2,9 @@ package model;
 
 import manager.Manager;
 
-import java.util.HashMap;
-
 public class Epic extends Task{
 
-    private final int epicId;
+   // private final int epicId;
     private final String epicName;
     private final String descriptionEpic;
     private String epicStatus;

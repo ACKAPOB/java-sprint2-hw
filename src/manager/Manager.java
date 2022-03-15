@@ -7,10 +7,11 @@ import model.Task;
 import java.util.HashMap;
 
 public class Manager {
-    public static int id = 0;
+   // public static int id = 0;
     private final HashMap<Integer, Task> taskMap = new HashMap<>();
     private final HashMap<Integer, Epic> epicMap = new HashMap<>();
     private final HashMap<Integer, SubTask> subTaskMap = new HashMap<>();
+
 
     public static int getId() {
         return id;

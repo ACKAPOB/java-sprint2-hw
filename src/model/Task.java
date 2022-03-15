@@ -3,7 +3,7 @@ package model;
 import manager.Manager;
 
 public class Task {
-    private int taskId;
+   // private int taskId;
     private final String taskName;
     private final String descriptionTask;
     private String taskStatus;
