@@ -3,11 +3,10 @@ package manager;
 import model.Task;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class InMemoryHistoryManager implements HistoryManager {
 
-    private List <Integer> list = new ArrayList();
+    private final ArrayList <Integer>list = new ArrayList();
 
     @Override
     public void add(Task task) {
@@ -18,10 +17,7 @@ public class InMemoryHistoryManager implements HistoryManager {
     }
 
     @Override
-    public List<Integer> getHistory() {
+    public ArrayList<Integer> getHistory() {
         return list;
     }
-
-
-
 }
