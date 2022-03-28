@@ -105,19 +105,24 @@ public class InMemoryTaskManager implements TaskManager{
             printAllRec.put(id++, subTask.toString());
         } return printAllRec;
     }
-
+/*
     @Override
     public HashMap<Integer, Task> getHistoryTask(){
         HashMap<Integer, Task> getHistoryMap = new HashMap<>();
         for (Integer key : historyManager.getHistory()) {
-                if (taskMap.containsKey(key)) {
-                    getHistoryMap.put(key, taskMap.get(key));
-                } else if (epicMap.containsKey(key)){
-                    getHistoryMap.put(key, epicMap.get(key));
-                } else if (subTaskMap.containsKey(key))
-                    getHistoryMap.put(key, subTaskMap.get(key));
+            if (taskMap.containsKey(key)) {
+                getHistoryMap.put(key, taskMap.get(key));
+            } else if (epicMap.containsKey(key)){
+                getHistoryMap.put(key, epicMap.get(key));
+            } else if (subTaskMap.containsKey(key))
+                getHistoryMap.put(key, subTaskMap.get(key));
         }
         return getHistoryMap;
+    }
+ */
+
+    @Override
+    public void getHistoryTask() {
 
     }
 

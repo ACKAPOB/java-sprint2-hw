@@ -60,7 +60,8 @@ public class Main {
 
         //taskManager.getHistoryTask();
 
-        System.out.println("последние просмотренные пользователем задачи  "  + taskManager.getHistoryTask());
+       // System.out.println("последние просмотренные пользователем задачи  "  + taskManager.getHistoryTask());
+
 
 
         //System.out.println("Удаление всех тасков " + taskManager.delAllTask());
