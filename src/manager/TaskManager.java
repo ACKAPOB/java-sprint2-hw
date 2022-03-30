@@ -5,6 +5,7 @@ import model.SubTask;
 import model.Task;
 
 import java.util.HashMap;
+import java.util.List;
 
 public interface TaskManager {
     void addNewTask(Task task);
@@ -20,9 +21,10 @@ public interface TaskManager {
     String reNewTask(int key, SubTask object);
 
     HashMap<Integer, String> getAllTasks();
-    void getHistoryTask();
 
-    Object getTaskToKey(int key);
+    List<Task> getHistoryTask();
+
+    Task getTaskToKey(int key);
 
     HashMap<Integer, String> getSubTaskToEpic (int key);
 

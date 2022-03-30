@@ -24,18 +24,18 @@ public class Main {
         taskManager.addNewTask(epic1);
         Epic epic2 = new Epic("epic2", "descEpic2");
         taskManager.addNewTask(epic2);
-        SubTask subTask1 = new SubTask( 2,"subTask1", "DescSubTask1", NEW);
+        SubTask subTask1 = new SubTask( 2,"subTask1_EPIC1", "DescSubTask1", NEW);
         taskManager.addNewTask(subTask1);
-        SubTask subTask2 = new SubTask( 3,"subTask2", "DescSubTask2", NEW);
+        SubTask subTask2 = new SubTask( 3,"subTask2_EPIC2", "DescSubTask2", NEW);
         taskManager.addNewTask(subTask2);
-        SubTask subTask3 = new SubTask( 3,"subTask3", "DescSubTask3", NEW);
+        SubTask subTask3 = new SubTask( 3,"subTask3_EPIC2", "DescSubTask3", NEW);
         taskManager.addNewTask(subTask3);
 
         System.out.println(taskManager.getAllTasks());
         System.out.println("++++++++++++++++++++++++++++++++++++++++++");
 
         SubTask reNewSubTask2 = new SubTask( 3,"NEWsubTask1", "NEWDescSubTask2", DONE);
-        taskManager.reNewTask(107, reNewSubTask2);
+        taskManager.reNewTask(7, reNewSubTask2);
 
         System.out.println(taskManager.getAllTasks());
         System.out.println("++++++++++++++++++++++++++++++++++++++++++");
@@ -58,11 +58,14 @@ public class Main {
         taskManager.getTaskToKey(9);
         taskManager.getTaskToKey(10);
 
+        taskManager.delTaskToKey(2);
+        taskManager.delTaskToKey(3);
+
+
         //taskManager.getHistoryTask();
 
-       // System.out.println("последние просмотренные пользователем задачи  "  + taskManager.getHistoryTask());
-
-
+        //System.out.println("последние просмотренные пользователем задачи  "  + taskManager.getHistoryTask());
+        System.out.println(taskManager.getAllTasks());
 
         //System.out.println("Удаление всех тасков " + taskManager.delAllTask());
     }
